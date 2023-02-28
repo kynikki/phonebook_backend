@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/kynikki/phonebook_backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "morgan": "^1.10.0"
   },
