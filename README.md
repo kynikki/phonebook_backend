@@ -1,3 +1,3 @@
 # phonebook_backend
 
-http://localhost:3002/
+http://localhost:3001/
