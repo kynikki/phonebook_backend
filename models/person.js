@@ -14,15 +14,29 @@ mongoose.connect(url)
         console.log('error connecting to MongoDB', error.message)
     })
 
-const personSchema = new mongoose.Schema({
+const personSchema = new mongoose.Schema({   
+    
     name: {
-        type: String,
-        minlength: 3,
-        required: true
+        type: String,        
+        required: true,
+        validate: {   
+            validator: function(v) {
+                return v.length > 2
+            },
+            message: `Minimun lenght of a name is 3 characters`                        
+        }  
+
     },
     number: {
         type: String,
-        required: true
+        required: true,
+        minlength: 8,
+        validate: {   
+            validator: function(v) {
+                return /^(\d{2}|\d{3})-\d[0-9]*/.test(v);
+            },
+            message: `Please insert a valid phone number`                        
+        }           
     }
 })
 
